@@ -1,3 +1,4 @@
+// Navegação entre fotos e textos
 function initTabNav() {
     const tabMenu = document.querySelectorAll('.js-tabmenu li');
     const tabContent = document.querySelectorAll('.js-tabcontent section');
@@ -20,6 +21,7 @@ function initTabNav() {
     }
 }
 
+// Accordion List 
 function initAcordion() {
     const accordionList = document.querySelectorAll(".js-accordion dt");
     const activeClass = 'ativo';
@@ -39,24 +41,29 @@ function initAcordion() {
     }
 }
 
-const sections = document.querySelectorAll(".js-scroll");
-const windowMetade = window.innerHeight * 0.6;
+// Animação ao fazer scroll da página
+function initAnimacaoScroll() {
+    const sections = document.querySelectorAll(".js-scroll");
+    const windowMetade = window.innerHeight * 0.6;
 
-if(sections.length){
-    sections[0].classList.add('ativo');
-    
-    function animaScroll(){
-        sections.forEach((section) => {
-            const sectionTop = section.getBoundingClientRect().top - windowMetade;
-            if(sectionTop < 0){
-                section.classList.add('ativo');
-            } else {
-                section.classList.remove('ativo');
-            }
-        })
+    if(sections.length){
+        sections[0].classList.add('ativo');
+
+        function animaScroll(){
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top - windowMetade;
+                if(sectionTop < 0){
+                    section.classList.add('ativo');
+                } else {
+                    section.classList.remove('ativo');
+                }
+            })
+        }
+
+        window.addEventListener("scroll", animaScroll)
     }
-
-    window.addEventListener("scroll", animaScroll)
 }
+
 initTabNav();
 initAcordion();
+initAnimacaoScroll();

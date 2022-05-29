@@ -224,6 +224,7 @@ body{
     }
 }
 
+/* Navegação entre fotos e textos css */
 .js .js-tabcontent section{
     display: none;
 }
@@ -244,6 +245,7 @@ body{
     }
 }
 
+/* accordion List css */
 .js .js-accordion dd{
     display: none;
 }
@@ -278,6 +280,7 @@ body{
     } 
 }
 
+/* Scroll animation css */
 .js .js-scroll{
     opacity: 0;
     transition: 0.3s;
